@@ -1,0 +1,36 @@
+﻿    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title Rede Social</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top navbar-primary bg-primary" style="background-color: #1476b6">
+            <div class="container"  >
+
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="~/">
+                        <img src="https://image.flaticon.com/icons/png/512/511/511138.png" style ="height: 25px; width: 25px; padding-bottom: 3px" />
+                    </a>
+
+                    @Html.ActionLink("Rede Social", "Index", "Usuario", new { area = "" }, new { @class = "navbar-brand", @style = "color:#ffffff" })
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>

@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "/Usuario/Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Home</h2>
+
+<body background="https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-045.jpg">
+    <div style="padding-top: 15px">
+        <button class="btn btn-primary" id="perfilBtn" type="button" data-toggle="collapse" data-target="#perfil" aria-expanded="true" aria-controls="#perfil">Perfil</button>
+        <button class="btn btn-primary" id="novopostBtn" type="button" data-toggle="collapse" data-target="#novopost" aria-expanded="false" aria-controls="#novopost">Novo Post</button>
+    </div>
+
+    <div class="collapse multi-collapse" id="perfil">
+        <h2>Perfil</h2>
+
+        <div>
+                <label>Dados de usuário: </label>
+        </div>
+    </div>
+    <div class="collapse multi-collapse" id="novopost">
+        <h2>Fazer uma publicacao</h2>
+
+        <form action="/Publicacao/Novo" method="post">
+            <div class="form-group ">
+                <label>Nova postagem</label>
+                <input class="form-control" tag="inputlg" maxlength="255" name="texto" placeholder="Escreva seu post...">
+            </div>
+            <div class="form-group">
+                <label>Foto</label>
+                <input class="form-control" maxlength="24" name="foto" placeholder="foto.jpeg">
+            </div>
+            <button type="submit" class="btn btn-default">Publicar</button>
+        </form>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        $("perfilBtn").click(function () {
+            $("#novopost").collapse('toggle');
+        });
+    });
+
+    $(document).ready(function () {
+        $("novopostBtn").click(function () {
+            $("#perfil").collapse('toggle');
+        });
+    });
+</script>
